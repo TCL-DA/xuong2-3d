@@ -1,6 +1,26 @@
-<!doctype html><html lang="vi"><meta charset="utf-8"><title>Xưởng 2 — 3D có kích thước R19</title>
-<style>body{margin:0;background:#e8edef;font:14px Arial;color:#17353c;overflow:hidden}canvas{display:block}header{position:absolute;top:20px;left:24px;max-width:580px;padding:14px 20px;background:#fffffff0;border:1px solid #d4dfe1;border-radius:8px;pointer-events:none}h1{font-size:24px;margin:0 0 8px}p{margin:6px 0;color:#53686e;line-height:1.4}.badge{color:#965020}nav{position:absolute;left:24px;bottom:24px;display:flex;flex-wrap:wrap;gap:7px;max-width:calc(100vw - 48px)}button,a{font:14px Arial;padding:12px 14px;border:1px solid #c3ced0;border-radius:6px;background:#fff;color:#17353c;cursor:pointer;text-decoration:none}button.active{background:#173e48;color:white}#status{position:absolute;right:24px;top:24px;padding:10px;background:#ffffffeb;border-radius:6px}#detail{position:absolute;right:24px;top:76px;width:285px;background:#ffffffed;border:1px solid #d4dfe1;border-radius:8px;padding:14px 18px;line-height:1.6}#detail b{display:block;margin-bottom:5px}@media(max-width:900px){header{max-width:55%;font-size:12px}#detail{top:185px;width:230px;font-size:12px}button,a{font-size:12px;padding:9px}}/*vc*/#viewcube{position:absolute;right:16px;top:10px;width:150px;height:150px}#viewcube canvas{cursor:pointer}#viewcube button{position:absolute;z-index:2;width:24px;height:24px;padding:0;border:none;background:none;color:#2f6f80;font-size:17px;line-height:24px;cursor:pointer}#viewcube button:hover{color:#1592c8}#viewcube .vca{display:none}#viewcube.mat .vca{display:block}#vcbar{position:absolute;right:22px;top:166px;display:flex;gap:6px}#lop{position:absolute;left:24px;top:188px;background:#ffffffee;border:1px solid #d4dfe1;border-radius:8px;padding:8px 12px 10px;font-size:13px;max-height:52vh;overflow:auto}#lop b{display:block;margin-bottom:5px}#lop label{display:block;padding:2px 0;cursor:pointer;white-space:nowrap}#lop input{margin-right:7px;vertical-align:-1px}#lop .hang{display:flex;gap:8px;margin-top:6px}#lop .hang button{padding:4px 9px;font-size:12px}@media(max-width:900px){#lop{font-size:11px;top:150px;max-height:40vh}}#vcbar button{padding:5px 11px;font-size:16px;line-height:18px}#status{right:188px}#detail{top:212px}/*/vc*/</style>
-<header><h1>XƯỞNG 2 / 3D · R20</h1><p class="badge">Dấu *: số đo từ ảnh hoặc gán tạm, chưa kiểm chứng hiện trường</p><p>Chuột trái: xoay · Lăn chuột: zoom tại con trỏ · Giữ chuột giữa/phải: di chuyển<br>Hộp góc phải: bấm mặt/cạnh/góc · ▲▼◀▶ lật mặt · ↺ ↻ xoay 90° · ⌂ về tổng thể<br>Kích thước có trong trình xem và mô hình GLB tải về.</p></header><div id="status">Đang tải…</div><aside id="detail"></aside><div id="lop"></div>
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Xưởng 2 — 3D có kích thước R20</title>
+<style>body{margin:0;background:#e8edef;font:14px Arial;color:#17353c;overflow:hidden}canvas{display:block}header{position:absolute;top:20px;left:24px;max-width:580px;padding:14px 20px;background:#fffffff0;border:1px solid #d4dfe1;border-radius:8px;pointer-events:none}h1{font-size:24px;margin:0 0 8px}p{margin:6px 0;color:#53686e;line-height:1.4}.badge{color:#965020}nav{position:absolute;left:24px;bottom:24px;display:flex;flex-wrap:wrap;gap:7px;max-width:calc(100vw - 48px)}button,a{font:14px Arial;padding:12px 14px;border:1px solid #c3ced0;border-radius:6px;background:#fff;color:#17353c;cursor:pointer;text-decoration:none}button.active{background:#173e48;color:white}#status{position:absolute;right:24px;top:24px;padding:10px;background:#ffffffeb;border-radius:6px}#detail{position:absolute;right:24px;top:76px;width:285px;background:#ffffffed;border:1px solid #d4dfe1;border-radius:8px;padding:14px 18px;line-height:1.6}#detail b{display:block;margin-bottom:5px}@media(max-width:900px){header{max-width:55%;font-size:12px}#detail{top:185px;width:230px;font-size:12px}button,a{font-size:12px;padding:9px}}/*vc*/#viewcube{position:absolute;right:16px;top:10px;width:150px;height:150px}#viewcube canvas{cursor:pointer}#viewcube button{position:absolute;z-index:2;width:24px;height:24px;padding:0;border:none;background:none;color:#2f6f80;font-size:17px;line-height:24px;cursor:pointer}#viewcube button:hover{color:#1592c8}#viewcube .vca{display:none}#viewcube.mat .vca{display:block}#vcbar{position:absolute;right:22px;top:166px;display:flex;gap:6px}#lop{position:absolute;left:24px;top:188px;background:#ffffffee;border:1px solid #d4dfe1;border-radius:8px;padding:8px 12px 10px;font-size:13px;max-height:52vh;overflow:auto}#lop b{display:block;margin-bottom:5px}#lop label{display:block;padding:2px 0;cursor:pointer;white-space:nowrap}#lop input{margin-right:7px;vertical-align:-1px}#lop .hang{display:flex;gap:8px;margin-top:6px}#lop .hang button{padding:4px 9px;font-size:12px}@media(max-width:900px){#lop{font-size:11px;top:150px;max-height:40vh}}#vcbar button{padding:5px 11px;font-size:16px;line-height:18px}#status{right:188px}#detail{top:212px}/*/vc*/
+/* ===== Màn hẹp (điện thoại) ===== */
+#mbar{display:none}
+@media(max-width:700px){
+  #mbar{display:flex;gap:6px;position:absolute;left:8px;top:8px;z-index:9}
+  #mbar button{padding:8px 11px;font-size:13px;background:#ffffffee}
+  #mbar button.active{background:#173e48;color:#fff}
+  header,#detail,#lop{position:absolute;left:8px;right:8px;top:52px;width:auto;max-width:none;
+    max-height:54vh;overflow:auto;font-size:13px;display:none;z-index:8;pointer-events:auto}
+  header.mo,#detail.mo,#lop.mo{display:block}
+  h1{font-size:18px}
+  #status{right:8px;top:8px;left:auto;padding:6px 9px;font-size:12px}
+  #viewcube{width:96px;height:96px;right:6px;top:44px}
+  #vcbar{right:8px;top:142px}
+  #vcbar button{padding:4px 9px;font-size:14px}
+  nav{left:0;right:0;bottom:0;width:100%;max-width:none;padding:7px 8px calc(7px + env(safe-area-inset-bottom));
+    margin:0;background:#eef2f3e8;border-top:1px solid #d4dfe1;
+    flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  nav button,nav a{flex:0 0 auto;font-size:13px;padding:9px 11px}
+  #lop label{font-size:13px;padding:4px 0}
+}</style>
+<header id="header"><h1>XƯỞNG 2 / 3D · R20</h1><p class="badge">Dấu *: số đo từ ảnh hoặc gán tạm, chưa kiểm chứng hiện trường</p><p>Chuột trái: xoay · Lăn chuột: zoom tại con trỏ · Giữ chuột giữa/phải: di chuyển<br>Hộp góc phải: bấm mặt/cạnh/góc · ▲▼◀▶ lật mặt · ↺ ↻ xoay 90° · ⌂ về tổng thể<br>Kích thước có trong trình xem và mô hình GLB tải về.</p></header><div id="mbar"><button data-mo="header">Hướng dẫn</button><button data-mo="lop">Lớp</button><button data-mo="detail">Chi tiết</button></div><div id="status">Đang tải…</div><aside id="detail"></aside><div id="lop"></div>
 <nav><button id="front">Ngo&#224;i &#273;&#432;&#7901;ng nh&#236;n v&#224;o</button><button id="inside">Qua c&#7917;a v&#224;o x&#432;&#7903;ng</button><button id="roofview">M&#225;i m&#7897;t d&#7889;c</button><button id="home">Tổng thể</button><button id="cot">C&#7897;t + d&#7847;m x&#237;ch</button><button id="sau">V&#225;ch sau + khung &#273;&#7887;</button><button id="dien">Điện: cáp + 2 tủ</button><button id="mang">Cáp treo ABC 4×35</button><button id="phukien">Phụ kiện ABC (cận)</button><button id="tiepdia">Tiếp địa + PE</button><button id="may">Bố trí máy</button><button id="rang">Máy rang Loring S70</button><button id="tpp">Tủ phân phối (cận)</button><button id="gac">Gác lửng kho</button><button id="wc">Khu vệ sinh</button><button id="office">Phòng / gác</button><button id="stair">Cầu thang</button><button id="top">Mặt bằng</button><button id="dims" class="active">Kích thước: bật</button><button id="cut" class="active">Đang mở mái</button><button id="walls">Vách tôn</button></nav>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"}}</script><script type="module">
 import * as THREE from 'three';import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
@@ -90,7 +110,7 @@ const LOP=[
   ['dims','Kích thước nhà'],
   ['dai-cap','Độ dài từng đoạn cáp']];
 const hopLop=document.getElementById('lop');
-let tat=new Set(['dai-cap']);try{const l=localStorage.getItem('xuong2_lop_tat');if(l)tat=new Set(JSON.parse(l))}catch(e){}
+let tat=new Set(['dai-cap','labels','dims']);try{const l=localStorage.getItem('xuong2_lop_v2');if(l)tat=new Set(JSON.parse(l))}catch(e){}
 function thuocLop(n,k){const g=n.userData.group||'';
   if(k==='labels')return n.isSprite&&g!=='dai-cap'&&!g.startsWith('dimensions');
   if(k==='dims')return g.startsWith('dimensions');
@@ -101,7 +121,7 @@ window.apLop=apLop;window.__sauVis=apLop;
 hopLop.innerHTML='<b>Hiện / ẩn chi tiết</b>'+LOP.map(([k,t])=>
   `<label><input type="checkbox" data-k="${k}"${tat.has(k)?'':' checked'}>${t}</label>`).join('')
   +'<div class="hang"><button id="lop-het">Hiện hết</button><button id="lop-cap">Chỉ xem cáp</button></div>';
-function luu(){localStorage.setItem('xuong2_lop_tat',JSON.stringify([...tat]))}
+function luu(){localStorage.setItem('xuong2_lop_v2',JSON.stringify([...tat]))}
 function dongBo(){for(const i of hopLop.querySelectorAll('input'))i.checked=!tat.has(i.dataset.k);
   visibility();luu()}
 hopLop.addEventListener('change',e=>{const k=e.target.dataset.k;if(!k)return;
@@ -110,6 +130,17 @@ document.getElementById('lop-het').onclick=()=>{tat.clear();dongBo()};
 document.getElementById('lop-cap').onclick=()=>{
   tat=new Set(LOP.map(([k])=>k).filter(k=>!['electrical','tpp','dai-cap','structure'].includes(k)));dongBo()};
 apLop();
+/* --- màn hẹp: nhãn co lại cho khỏi che mô hình --- */
+const NH0=[.105,.02625];
+function nhipNhan(){const k=Math.max(.45,Math.min(1,innerWidth/1300));
+  for(const s of labels)s.scale.set(NH0[0]*k,NH0[1]*k,1)}
+addEventListener('resize',nhipNhan);nhipNhan();
+/* --- màn hẹp: 3 bảng chữ gom vào thanh nút trên đỉnh --- */
+for(const b of document.querySelectorAll('#mbar button'))b.onclick=()=>{
+  const o=document.getElementById(b.dataset.mo),mo=!o.classList.contains('mo');
+  for(const x of document.querySelectorAll('#mbar button')){
+    document.getElementById(x.dataset.mo).classList.remove('mo');x.classList.remove('active')}
+  if(mo){o.classList.add('mo');b.classList.add('active')}};
 window.__cam=camera;window.__ctl=controls;window.__THREE=THREE;
 /* --- zoom nhanh dần khi lại gần: OrbitControls đi theo tỉ lệ khoảng cách nên sát vật là ì --- */
 const DX=8,DN=.6,SMAX=3.2;                       // xa hơn DX: tốc độ thường; tới DN: nhanh nhất
